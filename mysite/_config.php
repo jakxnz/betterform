@@ -4,7 +4,7 @@ global $project;
 $project = 'mysite';
 
 global $database;
-$database = '';
+$database = 'betterform';
 
 require_once('conf/ConfigureFromEnv.php');
 

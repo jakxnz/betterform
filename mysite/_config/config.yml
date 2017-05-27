@@ -8,10 +8,13 @@ After:
 # See http://doc.silverstripe.org/framework/en/topics/configuration
 # Caution: Indentation through two spaces, not tabs
 SSViewer:
-  theme: 'simple'
+  theme: 'betterform'
+  
 Debug:
   friendly_error_httpcode: true
 
 Director:
   rules:
     '': 'BetterFormController'
+    'api//$action/$param_name/$param_value': 'BetterFormController'
+    
