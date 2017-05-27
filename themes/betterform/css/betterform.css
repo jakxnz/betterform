@@ -15,6 +15,9 @@
     background-size: contain;
   }
 }
+#main-wrapper {
+  margin-bottom: 100px;
+}
 #main-footer {
   background-color: white;
   background-color: rgba(255, 255, 255, 0.8);
@@ -25,13 +28,9 @@
 }
 #main-footer .inner {
   background-color: #777;
-  margin-top: 20px;
   padding: 20px 20px 10px  10px;
   color: white;
   font-style: italic;
-}
-#betterform-mainform {
-  margin-bottom: 100px;
 }
 .radio-inline-container {
   margin-top: 7px;

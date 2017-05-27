@@ -13,3 +13,4 @@ _ss_environment.php
 # Depend on composer
 /assets
 /framework
+/nbproject/private/

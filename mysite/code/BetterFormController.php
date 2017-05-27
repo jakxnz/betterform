@@ -243,27 +243,13 @@ class BetterFormController extends Controller {
 		
 		return $retArray;
 	}
-
+	
 	/**
-	 * Handle validation AJAX calls
-	 * @param type $email
+	 * Validate all posted variables
 	 * @return type
 	 */
-	public function check($request) {
-		
-		$parameterName = $this->getRequest()->postVar('param_name');
-		$parameterValue = urldecode($this->getRequest()->postVar('param_value'));
+	protected function checkParams() {
 
-		return json_encode($this->checkParam($parameterName, $parameterValue));
-	}
-
-	/**
-	 * Handle validation AJAX calls
-	 * @param type $email
-	 * @return type
-	 */
-	public function submit() {
-		
 		$retCode = self::VALIDATION_SUCCESS;
 		$submissionResults = [];
 		
@@ -276,10 +262,32 @@ class BetterFormController extends Controller {
 		}
 		$submissionResults['return_code'] = $retCode;
 		
+		return $submissionResults;
+	}
+
+	/**
+	 * Handle validation AJAX calls
+	 * @param type $email
+	 * @return type
+	 */
+	public function check() {
+		
+		return json_encode($this->checkParams());
+	}
+
+	/**
+	 * Handle validation AJAX calls
+	 * @param type $email
+	 * @return type
+	 */
+	public function submit() {
+		
+		$submissionResults = $this->checkParams();
+		
 		// If validation was successful, go through array once more and 'submits' value,
 		// here we only return values received and validated but that's the point where 
 		// we should store data or use it in any way.
-		if ($retCode === self::VALIDATION_SUCCESS) {
+		if ($submissionResults['return_code'] === self::VALIDATION_SUCCESS) {
 			foreach ($this->getRequest()->postVars() as $parameterName => $parameterValue) {
 				$submissionResults[$parameterName]['submitted_value'] = $this->test_input($parameterValue);
 			}

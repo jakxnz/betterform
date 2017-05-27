@@ -36,20 +36,22 @@ $(function() {
             return; 
         }
         
+        var postData = {};
+        var fieldname = this.name;
+        postData[fieldname] = this.value;
+        
         $.ajax({
             url: "api/check",
             method: "POST",
             dataType: "json",
-            data: {
-                param_name: this.name,
-                param_value: this.value,
-            },
+            data: postData,
             target: this,
+            fieldname: fieldname,
             success: function(data) {
-                if (data.return_code === 0) {
+                if (data[this.fieldname].return_code === 0) {
                     setFieldValid(this.target);
                 } else {
-                    setFieldInvalid(this.target, data.error_message);
+                    setFieldInvalid(this.target, data[this.fieldname].error_message);
                 }
                 // Toggle submit button
                 if ($('.has-error').length) {
@@ -59,7 +61,7 @@ $(function() {
                 }
             },
             error: function() {
-                alert('An error occurred while submitting the form.')
+                alert('An error occurred while validating the form.')
             },
         });
     };
@@ -99,7 +101,11 @@ $(function() {
                         yourInput.find('.' + i + ' .value').html(data[i].submitted_value);
                     });
 
-                    yourInput.slideDown();
+                    yourInput.slideDown(400, 
+                        function() {
+                            $(window).scrollTop($('#your-input').position().top);
+                        }
+                    );
                 } else { 
                     // If submission was not successful, show error 
                     //messages next to invalid fields

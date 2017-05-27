@@ -25,47 +25,49 @@
     </head>
     <body>
         <% include Header %>
-        <!--[if lt IE 8]>
-        <div class="row">
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        </div>
-        <![endif]-->
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                <h2>PHP Form Validation Example</h2>
+        <div id="main-wrapper">
+            <!--[if lt IE 8]>
+            <div class="row">
+                <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                <p><span class="help-block">* required field.</span></p>
-            </div>
-        </div>
+            <![endif]-->
 
-        $BetterForm
-
-
-        <div id="your-input" style="display: none;">
             <div class="row">
                 <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-                    <h2>Your Input:</h2>
+                    <h2>PHP Form Validation Example</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                    <p><span class="help-block">* required field.</span></p>
                 </div>
             </div>
 
-            <div class="row">
-                <p class="col-xs-12 col-sm-10 col-sm-offset-1 name"><span class="value"></span></p>
-            </div>
-            <div class="row">
-                <p class="col-xs-12 col-sm-10 col-sm-offset-1 email"><span class="value"></span></p>
-            </div>
-            <div class="row">
-                <p class="col-xs-12 col-sm-10 col-sm-offset-1 website"><span class="value"></span></p>
-            </div>
-            <div class="row">
-                <p class="col-xs-12 col-sm-10 col-sm-offset-1 comment"><span class="value"></span></p>
-            </div>
-            <div class="row">
-                <p class="col-xs-12 col-sm-10 col-sm-offset-1 gender"><span class="value"></span></p>
+            $BetterForm
+
+
+            <div id="your-input" style="display: none;">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                        <h2>Your Input:</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="col-xs-12 col-sm-10 col-sm-offset-1 name"><span class="value"></span></p>
+                </div>
+                <div class="row">
+                    <p class="col-xs-12 col-sm-10 col-sm-offset-1 email"><span class="value"></span></p>
+                </div>
+                <div class="row">
+                    <p class="col-xs-12 col-sm-10 col-sm-offset-1 website"><span class="value"></span></p>
+                </div>
+                <div class="row">
+                    <p class="col-xs-12 col-sm-10 col-sm-offset-1 comment"><span class="value"></span></p>
+                </div>
+                <div class="row">
+                    <p class="col-xs-12 col-sm-10 col-sm-offset-1 gender"><span class="value"></span></p>
+                </div>
             </div>
         </div>
 
